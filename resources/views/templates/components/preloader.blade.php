@@ -1,12 +1,11 @@
-<div id="preloader">
-    <div class="loader">
-        <div class="dots">
-            <div class="dot mainDot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-    </div>
-</div>
+   <!-- tap to top-->
+   <div class="tap-top">
+       <svg class="feather">
+           <use href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-up">
+           </use>
+       </svg>
+   </div>
+   <!-- loader-->
+   <div class="loader-wrapper">
+       <div class="loader"></div>
+   </div>
