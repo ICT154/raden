@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 // DASHBOARD
-Route::get('/dashboard', [Dashboard::class, 'index']);
+Route::get('/dashboard', [Dashboard::class, 'index'])->name('home');
 Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard.index');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');

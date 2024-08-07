@@ -17,7 +17,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $menus = Menu::whereNull('parent_id')->with('children')->orderBy('order')->get();
+        if (session()->has('menus')) {
+            $menus = session('menus');
+        } else {
+            $menus = Menu::whereNull('parent_id')->with('children')->orderBy('order')->get();
+            session(['menus' => $menus]);
+        }
+
         return view('dashboard.index', compact('menus'));
     }
 }
