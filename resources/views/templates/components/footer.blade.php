@@ -6,9 +6,7 @@
             </div>
             <div class="col-md-6">
                 <p class="float-end mb-0">Hand crafted &amp; made with
-                    <svg class="svg-color footer-icon">
-                        <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#footer-heart"></use>
-                    </svg>
+                    <i class="fa-solid fa-heart"></i>
                 </p>
             </div>
         </div>

@@ -58,10 +58,7 @@
                 <div class="header-left d-lg-block d-none">
                     <form class="search-form mb-0">
                         <div class="input-group"><span class="input-group-text pe-0">
-                                <svg class="search-bg svg-color">
-                                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Search">
-                                    </use>
-                                </svg></span>
+                                <i class="fa-brands fa-searchengin"></i></span>
                             <input class="form-control" type="text" placeholder="Search anything...">
                         </div>
                     </form>
@@ -94,174 +91,9 @@
                         ***********************************-->
 
                         <!-- Cart menu-->
-                        <li class="custom-dropdown"><a href="javascript:void(0)">
-                                <svg class="svg-color">
-                                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Bag">
-                                    </use>
-                                </svg></a>
-                            <div class="custom-menu cart-dropdown py-0 overflow-hidden">
-                                <h5 class="title bg-primary-light">Cart<span>Total : <span
-                                            class="font-primary">4350.9</span></span></h5>
-                                <ul>
-                                    <li class="cartbox d-flex bg-light-primary">
-                                        <div class="flex-shrink-0 border-primary"><img
-                                                src="../assets/images/dashboard2/product/1.png" alt=""></div>
-                                        <div class="touchpin-details"><a href="cart.html">
-                                                <h5>Apple Computers</h5>
-                                            </a><span>$2600.00</span>
-                                            <div class="touchspin-wrapper">
-                                                <button class="decrement-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#minus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <input class="form-control input-touchspin bg-light-primary"
-                                                    type="number" value="5">
-                                                <button class="increment-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#plus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <button class="btn btn-close"></button>
-                                        </div>
-                                    </li>
-                                    <li class="cartbox d-flex bg-light-secondary">
-                                        <div class="flex-shrink-0 border-secondary"><img
-                                                src="../assets/images/dashboard2/product/2.png" alt=""></div>
-                                        <div class="touchpin-details"><a href="cart.html">
-                                                <h5>Microwave</h5>
-                                            </a><span>$1450.45</span>
-                                            <div class="touchspin-wrapper">
-                                                <button class="decrement-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#minus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <input class="form-control input-touchspin bg-light-secondary"
-                                                    type="number" value="5">
-                                                <button class="increment-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#plus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <button class="btn btn-close"></button>
-                                        </div>
-                                    </li>
-                                    <li class="cartbox d-flex bg-light-tertiary">
-                                        <div class="flex-shrink-0 border-tertiary"><img
-                                                src="../assets/images/dashboard2/product/3.png" alt=""></div>
-                                        <div class="touchpin-details"><a href="cart.html">
-                                                <h5>Mackup Kit</h5>
-                                            </a><span>$300.45</span>
-                                            <div class="touchspin-wrapper">
-                                                <button class="decrement-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#minus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                                <input class="form-control input-touchspin bg-light-tertiary"
-                                                    type="number" value="5">
-                                                <button class="increment-touchspin btn-touchspin">
-                                                    <svg class="svg-color">
-                                                        <use
-                                                            href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#plus">
-                                                        </use>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <button class="btn btn-close"></button>
-                                        </div>
-                                    </li>
-                                    <li class="mt-3 p-0 d-flex justify-content-center">
-                                        <div><a class="btn btn-secondary" href="checkout.html">Checkout</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- Bookmark menu-->
-                        <li class="custom-dropdown"><a href="javascript:void(0)">
-                                <svg class="svg-color">
-                                    <use href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Message">
-                                    </use>
-                                </svg></a><span class="badge rounded-pill badge-tertiary">3</span>
-                            <div class="custom-menu message-dropdown py-0 overflow-hidden">
-                                <h5 class="title bg-primary-light">Messages</h5>
-                                <ul>
-                                    <li class="d-flex b-t-primary">
-                                        <div class="d-block"><a href="letter-box.html">
-                                                <h5>Design meeting</h5>
-                                            </a>
-                                            <h6>
-                                                <svg class="feather me-1">
-                                                    <use
-                                                        href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                    </use>
-                                                </svg><span>Just Now</span>
-                                            </h6>
-                                        </div>
-                                        <div class="badge badge-light-danger">
-                                            <svg class="feather me-1">
-                                                <use
-                                                    href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                </use>
-                                            </svg><span>Open</span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex b-t-secondary">
-                                        <div class="d-block"><a href="letter-box.html">
-                                                <h5>Weekly scurm Meeting</h5>
-                                            </a>
-                                            <h6>
-                                                <svg class="feather me-1">
-                                                    <use
-                                                        href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                    </use>
-                                                </svg><span>1 Hour Ago</span>
-                                            </h6>
-                                        </div>
-                                        <div class="badge badge-light-danger">
-                                            <svg class="feather me-1">
-                                                <use
-                                                    href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                </use>
-                                            </svg><span>Open</span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex b-t-tertiary">
-                                        <div class="d-block"><a href="letter-box.html">
-                                                <h5>Check your login page</h5>
-                                            </a>
-                                            <h6>
-                                                <svg class="feather me-1">
-                                                    <use
-                                                        href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                    </use>
-                                                </svg><span>2 Hour Ago</span>
-                                            </h6>
-                                        </div>
-                                        <div class="badge badge-light-success">
-                                            <svg class="feather me-1">
-                                                <use
-                                                    href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#clock">
-                                                </use>
-                                            </svg><span>Closed</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        @include('templates.components.cart-menu')
+                        <!-- Chat menu-->
+                        @include('templates.components.chat-menu')
                         <li class="profile-dropdown custom-dropdown">
                             <div class="d-flex align-items-center"><img src="../assets/images/profile.png"
                                     alt="">
@@ -272,32 +104,19 @@
                             <div class="custom-menu overflow-hidden">
                                 <ul>
                                     <li class="d-flex">
-                                        <svg class="svg-color">
-                                            <use
-                                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Profile">
-                                            </use>
-                                        </svg><a class="ms-2" href="user-profile.html">Account</a>
+                                        <i class="fa-solid fa-droplet"></i><a class="ms-2"
+                                            href="user-profile.html">Account</a>
                                     </li>
                                     <li class="d-flex">
-                                        <svg class="svg-color">
-                                            <use
-                                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Message">
-                                            </use>
-                                        </svg><a class="ms-2" href="letter-box.html">Inbox</a>
+                                        <i class="fa-solid fa-droplet"></i><a class="ms-2"
+                                            href="letter-box.html">Inbox</a>
                                     </li>
                                     <li class="d-flex">
-                                        <svg class="svg-color">
-                                            <use
-                                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Document">
-                                            </use>
-                                        </svg><a class="ms-2" href="to-do.html">Task</a>
+                                        <i class="fa-solid fa-droplet"></i><a class="ms-2" href="to-do.html">Task</a>
                                     </li>
                                     <li class="d-flex">
-                                        <svg class="svg-color">
-                                            <use
-                                                href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Login">
-                                            </use>
-                                        </svg><a class="ms-2" href="login.html">Log Out</a>
+                                        <i class="fa-solid fa-droplet"></i><a class="ms-2" href="login.html">Log
+                                            Out</a>
                                     </li>
                                 </ul>
                             </div>
@@ -312,19 +131,11 @@
             <div class="overlay"></div>
             <aside class="page-sidebar" data-sidebar-layout="stroke-svg">
                 <div class="left-arrow" id="left-arrow">
-                    <svg class="feather">
-                        <use
-                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-left">
-                        </use>
-                    </svg>
+                    <i class="fa-solid fa-feather"></i>
                 </div>
                 @include('templates.components.menu')
                 <div class="right-arrow" id="right-arrow">
-                    <svg class="feather">
-                        <use
-                            href="https://admin.pixelstrap.net/edmin/assets/svg/feather-icons/dist/feather-sprite.svg#arrow-right">
-                        </use>
-                    </svg>
+                    <i class="fa-solid fa-feather"></i>
                 </div>
             </aside>
             <!-- Page sidebar end-->
@@ -340,8 +151,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex align-items-center gap-3 pills-blogger">
-                                        <div class="blog-wrapper"> <img class="blog-img img-100"
-                                                src="../assets/images/dashboard2/product/headphones.png"
+                                        <div class="blog-wrapper"> <img class="blog-img img-100" src="#!"
                                                 alt="head-phone"></div>
                                         <div class="blog-content">
                                             <p> <em class="font-primary fw-bold">Smart headphones</em> — also called

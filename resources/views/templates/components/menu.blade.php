@@ -16,9 +16,7 @@
             @endphp
             @if ($menu->children->isNotEmpty())
                 <li class="sidebar-list {{ $isActive || $isParentActive ? 'active' : '' }}">
-                    <svg class="pinned-icon">
-                        <use href="../assets/svg/iconly-sprite.svg#Pin"></use>
-                    </svg>
+                    <i class="fa-solid fa-thumbtack"></i>
                     <a class="sidebar-link" href="javascript:void(0)">
                         @if ($menu->icon)
                             <i class="{{ $menu->icon }}"></i>
@@ -44,9 +42,7 @@
                 </li>
             @else
                 <li class="sidebar-list {{ $isActive || $isParentActive ? 'active' : '' }}">
-                    <svg class="pinned-icon">
-                        <use href="../assets/svg/iconly-sprite.svg#Pin"></use>
-                    </svg>
+                    <i class="fa-solid fa-thumbtack"></i>
                     <a class="sidebar-link"
                         href="{{ $menu->route ? (Route::has($menu->route) ? route($menu->route) : '#') : '#' }}">
                         @if ($menu->icon)
