@@ -8,6 +8,6 @@
         <i class="fa-solid fa-bell"></i>
     </a>
     <div class="form-group search-form">
-        <input type="text" placeholder="Search here...">
+        <input type="text" placeholder="Search here..." name="search_here_dark_anything" id="search_here_dark_anything">
     </div>
 </li>

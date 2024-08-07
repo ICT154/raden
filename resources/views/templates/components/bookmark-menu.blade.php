@@ -7,7 +7,8 @@
                   <li>
                       <form class="mb-3">
                           <div class="input-group">
-                              <input class="form-control" type="text" placeholder="Search Bookmark..."><span
+                              <input class="form-control" type="text" placeholder="Search Bookmark..."
+                                  name="search_Bookmark_anything" id="search_Bookmark_anything"><span
                                   class="input-group-text">
                                   <i class="fa-solid fa-droplet"></i></span>
                           </div>

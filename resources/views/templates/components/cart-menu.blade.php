@@ -12,7 +12,7 @@
                         <button class="decrement-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>
-                        <input class="form-control input-touchspin bg-light-primary" type="number" value="5">
+                        <input class="form-control input-touchspin bg-light-primary" type="number" value="5" name="input_toucping_primary_cart" id="input_toucping_primary_cart">
                         <button class="increment-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>
@@ -29,7 +29,7 @@
                         <button class="decrement-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>
-                        <input class="form-control input-touchspin bg-light-secondary" type="number" value="5">
+                        <input class="form-control input-touchspin bg-light-secondary" type="number" value="5" name="input_toucping_secondary_cart" id="input_toucping_secondary_cart">
                         <button class="increment-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>
@@ -46,7 +46,7 @@
                         <button class="decrement-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>
-                        <input class="form-control input-touchspin bg-light-tertiary" type="number" value="5">
+                        <input class="form-control input-touchspin bg-light-tertiary" type="number" value="5" name="input_toucping_tertiary_cart" id="input_toucping_tertiary_cart">
                         <button class="increment-touchspin btn-touchspin">
                             <i class="fa-solid fa-spinner"></i>
                         </button>

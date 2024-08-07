@@ -59,7 +59,8 @@
                     <form class="search-form mb-0">
                         <div class="input-group"><span class="input-group-text pe-0">
                                 <i class="fa-brands fa-searchengin"></i></span>
-                            <input class="form-control" type="text" placeholder="Search anything...">
+                            <input class="form-control" type="text" placeholder="Search anything..."
+                                name="search_navbar_anything" id="search_navbar_anything">
                         </div>
                     </form>
                 </div>
@@ -95,8 +96,7 @@
                         <!-- Chat menu-->
                         @include('templates.components.chat-menu')
                         <li class="profile-dropdown custom-dropdown">
-                            <div class="d-flex align-items-center"><img src="../assets/images/profile.png"
-                                    alt="">
+                            <div class="d-flex align-items-center"><img src="#!" alt="">
                                 <div class="flex-grow-1">
                                     <h5>Wade Warren</h5><span>UI Designer</span>
                                 </div>
