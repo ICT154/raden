@@ -44,8 +44,8 @@
         <!-- Page header start -->
         <header class="page-header row">
             <div class="logo-wrapper d-flex align-items-center col-auto"><a href="index.html"><img class="for-light"
-                        src="../assets/images/logo/logo.png" alt="logo"><img class="for-dark"
-                        src="../assets/images/logo/dark-logo.png" alt="logo"></a><a class="close-btn"
+                        src="{{ asset('images/logo/logo.png') }}" alt="logo"><img class="for-dark"
+                        src="{{ asset('images/logo/dark-logo.png') }}" alt="logo"></a><a class="close-btn"
                     href="javascript:void(0)">
                     <div class="toggle-sidebar">
                         <div class="line"></div>
@@ -318,7 +318,7 @@
                         </use>
                     </svg>
                 </div>
-                in
+                @include('templates.components.menu')
                 <div class="right-arrow" id="right-arrow">
                     <svg class="feather">
                         <use
@@ -329,27 +329,7 @@
             </aside>
             <!-- Page sidebar end-->
             <div class="page-body">
-                <div class="container-fluid">
-                    <div class="row page-title">
-                        <div class="col-sm-6">
-                            <h3>Sample Page</h3>
-                        </div>
-                        <div class="col-sm-6">
-                            <nav>
-                                <ol class="breadcrumb justify-content-sm-end align-items-center">
-                                    <li class="breadcrumb-item"> <a href="index.html">
-                                            <svg class="svg-color">
-                                                <use
-                                                    href="https://admin.pixelstrap.net/edmin/assets/svg/iconly-sprite.svg#Home">
-                                                </use>
-                                            </svg></a></li>
-                                    <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">Sample Page</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+                @include('templates.components.breadcrumb')
                 <!-- Container-fluid starts-->
                 <div class="container-fluid">
                     <div class="row">
