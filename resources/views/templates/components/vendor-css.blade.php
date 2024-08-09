@@ -22,22 +22,22 @@
         rel="stylesheet">
     <!-- Font awesome icon css -->
     <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/brands.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/solid.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/regular.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/brands.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/solid.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/regular.min.css') }}">
     <!-- Ico Icon css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/@icon/icofont/icofont.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/@icon/icofont/icofont.min.css') }}">
     <!-- Flag Icon css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/flag-icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/flag-icon.min.css') }}">
     <!-- Themify Icon css -->
     <link rel="stylesheet" type="text/css"
-        href="{{ asset('/css/vendors/themify-icons/themify-icons/css/themify.css') }}">
+        href="{{ asset('/css/vendors/themify-icons/themify-icons/css/themify.min.css') }}">
     <!-- Animation css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/animate.css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/animate.css/animate.min.css') }}">
     <!-- Whether Icon css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/weather-icons/css/weather-icons.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/scrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/vendors/scrollbar.min.css') }}">
     <!-- App css-->
-    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.min.css') }}">
     <link id="color" rel="stylesheet" href="{{ asset('/css/color-1.css') }}" media="screen">
