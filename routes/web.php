@@ -28,6 +28,10 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+
+    // verification.notice
+    Route::get('/email/verify', [AuthenticationController::class, 'verificationNotice'])->name('verification.notice');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
