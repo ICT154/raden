@@ -91,7 +91,7 @@
                                 <div class="form-group">
                                     <ul class="login-social">
                                         <li>
-                                            <a href="https://www.google.com" target="_blank" aria-label="Google Login">
+                                            <a href="/auth/google/redirect" target="_blank" aria-label="Google Login">
                                                 <i class="fa-brands fa-google"></i>
                                             </a>
                                         </li>

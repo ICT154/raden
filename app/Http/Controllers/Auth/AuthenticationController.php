@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
@@ -105,6 +106,8 @@ class AuthenticationController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
+
         try {
             $request->validate([
                 'register.first_name' => 'required',
@@ -121,8 +124,11 @@ class AuthenticationController extends Controller
 
             $user->sendEmailVerificationNotification();
 
+            DB::commit();
+
             return redirect()->route('verification.notice');
         } catch (\Throwable $th) {
+            DB::rollback();
             Log::error($th->getMessage());
             return back()->withErrors([
                 'register.email' => 'Failed to register user. Please try again. ' . $th->getMessage(),

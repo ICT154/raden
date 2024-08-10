@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\AuthenticationController;
 use App\Http\Controllers\Profile\UserController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 
 
 
@@ -22,7 +23,7 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', [AuthenticationController::class, 'index'])->name('login');
+    Route::get('/', [AuthenticationController::class, 'index']);
     Route::get('/login', [AuthenticationController::class, 'index'])->name('login');
     Route::post('/auth', [AuthenticationController::class, 'authenticate'])->name('auth.authenticate');
 
@@ -39,6 +40,10 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/password/forgot', [AuthenticationController::class, 'sendResetLinkEmail'])->name('forgot-password.send');
     Route::get('/password/reset/{token}', [AuthenticationController::class, 'showResetForm'])->name('password.reset');
     Route::post('/password/reset', [AuthenticationController::class, 'resetPassword'])->name('password.update');
+
+    // Google Auth
+    Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->name('auth.google.redirect');
+    Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
 });
 
 Route::middleware(['auth'])->group(function () {
