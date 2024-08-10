@@ -49,6 +49,10 @@
                                         {{ $error }}
                                     @endforeach
                                 </div>
+                            @elseif (session('status'))
+                                <div class="alert alert-light-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
                             @endif
                             <form class="theme-form" action="/auth" method="post">
                                 @csrf
@@ -74,7 +78,7 @@
                                         <input class="form-check-input" id="solid6" type="checkbox"
                                             name="login[remember]">
                                         <label class="form-check-label" for="solid6">Remember password</label>
-                                    </div><a class="link-two" href="forget-password.html">Forgot password?</a>
+                                    </div><a class="link-two" href="/password/forgot">Forgot password?</a>
                                     <div class="text-end mt-3">
                                         <button class="btn btn-primary btn-block w-100 text-white" type="submit">Sign
                                             in

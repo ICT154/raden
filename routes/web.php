@@ -22,9 +22,23 @@ use App\Http\Controllers\MenuController;
 */
 
 Route::middleware(['guest'])->group(function () {
+    Route::get('/', [AuthenticationController::class, 'index'])->name('login');
     Route::get('/login', [AuthenticationController::class, 'index'])->name('login');
     Route::post('/auth', [AuthenticationController::class, 'authenticate'])->name('auth.authenticate');
+
+    // REGISTER
     Route::get('/register', [AuthenticationController::class, 'register'])->name('register');
+    Route::post('/register', [AuthenticationController::class, 'store'])->name('register.store');
+
+    // VERIFICATION
+    Route::get('/email/verify', [AuthenticationController::class, 'verificationNotice'])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [AuthenticationController::class, 'verificationVerify'])->name('verification.verify');
+
+    // FORGOT PASSWORD
+    Route::get('/password/forgot', [AuthenticationController::class, 'forgotPassword'])->name('forgot-password');
+    Route::post('/password/forgot', [AuthenticationController::class, 'sendResetLinkEmail'])->name('forgot-password.send');
+    Route::get('/password/reset/{token}', [AuthenticationController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/password/reset', [AuthenticationController::class, 'resetPassword'])->name('password.update');
 });
 
 Route::middleware(['auth'])->group(function () {

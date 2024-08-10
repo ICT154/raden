@@ -36,7 +36,7 @@
                 <div class="login-card login-dark">
                     <div>
                         <div>
-                            <a class="logo text-center" href="index.html">
+                            <a class="logo" aria-label="vito" href="index.html">
                                 {{-- <img class="img-fluid for-light" src="../assets/images/logo/logo.png" alt="looginpage">
                                 <img class="img-fluid for-dark m-auto" src="../assets/images/logo/dark-logo.png"
                                     alt="logo"> --}}
@@ -50,81 +50,59 @@
                                     @endforeach
                                 </div>
                             @endif
-                            <form class="theme-form" action="/register" method="post">
+                            <form class="theme-form" action="/password/reset" method="post">
                                 @csrf
-                                <h2 class="text-center">Create your account</h2>
-                                <p class="text-center">Enter your personal details to create account</p>
-                                <div class="form-group">
-                                    <label class="col-form-label pt-0" for="register_first_name">Your Name</label>
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <input class="form-control" type="text" required=""
-                                                placeholder="First name" name="register[first_name]"
-                                                id="register_first_name">
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-control" type="text" required=""
-                                                placeholder="Last name" name="register[last_name]"
-                                                id="register_last_name">
+                                <form class="theme-form">
+                                    <h2>Reset Your Password</h2>
+                                    <div class="form-group">
+                                        <label class="col-form-label" for="reset_password">New Password</label>
+                                        <div class="form-input position-relative">
+                                            <input class="form-control" type="password" name="reset[password]"
+                                                required="" placeholder="*********" id="reset_password">
+                                            <div class="show-hide"><span class="show"></span></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="register_email">Email Address</label>
-                                    <input class="form-control" type="email" required=""
-                                        placeholder="Test@gmail.com" name="register[email]" id="register_email">
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="register_password">Password</label>
-                                    <div class="form-input position-relative">
-                                        <input class="form-control" type="password" name="register[password]"
-                                            required="" placeholder="*********" id="register_password">
-                                        <div class="show-hide"><span class="show"></span></div>
-                                    </div>
-                                </div>
 
-                                {{-- password strength --}}
-                                <div class="form-group">
-                                    <div class="progress mb-0">
-                                        <div class="progress-bar-animated progress-bar-striped bg-danger"
-                                            role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">
+                                    {{-- password strength --}}
+                                    <div class="form-group">
+                                        <div class="progress mb-0">
+                                            <div class="progress-bar-animated progress-bar-striped bg-danger"
+                                                role="progressbar" style="width: 25%" aria-valuenow="25"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                            </div>
                                         </div>
+                                        <div class="form-text text-muted">Password strength: <strong>Weak</strong></div>
                                     </div>
-                                    <div class="form-text text-muted">Password strength: <strong>Weak</strong></div>
-                                </div>
 
-                                {{-- password confimation --}}
-                                <div class="form-group mb-0">
-                                    <label class="col-form-label" for="register_confirm_password">Confirm
-                                        Password</label>
-                                    <div class="form-input position-relative">
-                                        <input class="form-control" type="password"
-                                            name="register[password_confirmation]" required=""
-                                            placeholder="*********" id="register_confirm_password">
-                                        <div class="show-hide"><span class="show"></span></div>
+                                    <div class="form-group">
+                                        <label class="col-form-label" for="reset_password_confirmation">Retype
+                                            Password</label>
+                                        <input class="form-control" type="password" name="reset[password_confirmation]"
+                                            required="" placeholder="*********" id="reset_password_confirmation">
                                     </div>
-                                </div>
+                                    {{-- password match error message --}}
+                                    <div class="form-text text-danger">Passwords do not match</div>
 
-                                {{-- password match error message --}}
-                                <div class="form-text text-danger">Passwords do not match</div>
-                                <div class="form-group mb-0 checkbox-checked">
-                                    {{-- <div class="form-check checkbox-solid-info">
-                                        <input class="form-check-input" id="solid6" type="checkbox">
-                                        <label class="form-check-label" for="solid6">Agree with</label><a
-                                            class="ms-3 link" href="forget-password.html">Privacy Policy</a>
-                                    </div> --}}
-                                    <button class="btn btn-primary btn-block w-100 mt-3" type="submit">Create
-                                        Account</button>
-                                </div>
-                                <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2"
-                                        href="/login">Sign in</a></p>
-                            </form>
+                                    {{-- token --}}
+                                    <input type="hidden" name="reset[token]" id="reset_token"
+                                        value="{{ $token }}">
+
+                                    {{-- email --}}
+                                    <input type="hidden" name="reset[email]" id="reset_email"
+                                        value="{{ $email }}">
+                                    <div class="form-group mb-0 checkbox-checked">
+                                        <button class="btn btn-primary btn-block w-100 mt-3" type="submit">Done
+                                        </button>
+                                    </div>
+                                    <p class="mt-4 mb-0">Don't have account?<a class="ms-2" href="/register">Create
+                                            Account</a></p>
+                                </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 <!-- jquery-->
@@ -132,11 +110,10 @@
 
 <!-- password js-->
 <script src="{{ asset('/js/password.min.js') }}"></script>
-
 <script>
     // password strength
-    var password = document.getElementById('register_password');
-    var confirm_password = document.getElementById('register_confirm_password');
+    var password = document.getElementById('reset_password');
+    var confirm_password = document.getElementById('reset_password_confirmation');
     var progress = document.querySelector('.progress-bar-animated');
     var strength = document.querySelector('.form-text');
     var progressWidth = 0;
@@ -194,7 +171,6 @@
         }
     });
 </script>
-
 <script>
     var watermark = `
     ██████╗ ██╗  ██╗██████╗ ██████╗ ███╗   ██╗     ██████╗  ██████╗ ███████╗██╗  ██╗██╗     ██╗     
