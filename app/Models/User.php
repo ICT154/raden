@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Notifications\VerifyEmail; // Add this line to import the missing class
-use OwenIt\Auditing\Contracts\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
@@ -13,7 +13,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use OwenIt\Auditing\Auditable as AuditableTrait;
 
-class User extends Authenticatable implements Auditable
+class User extends Authenticatable implements AuditableContract
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, AuditableTrait;
 

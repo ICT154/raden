@@ -6,7 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Auth\AuthenticationController;
 use App\Http\Controllers\Profile\UserController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\MenuController;
+use App\Http\Controllers\System\MenuController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 
 
@@ -57,4 +57,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings/profile', [SettingsController::class, 'profile'])->name('settings.profile');
     Route::get('/settings/account', [SettingsController::class, 'account'])->name('settings.account');
     Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
+
+    // MENU CONFIGURATION
+    Route::post('/menu-management/show', [MenuController::class, 'show'])->name('menu-management.show');
+    Route::get('/menu-management/{menu}/edit', [MenuController::class, 'edit'])->name('menu-management.edit');
+    Route::delete('/menu-management/{menu}', [MenuController::class, 'destroy'])->name('menu-management.destroy');
 });

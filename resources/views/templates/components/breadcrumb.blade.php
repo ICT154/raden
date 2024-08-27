@@ -6,10 +6,11 @@
         <div class="col-sm-6">
             <nav>
                 <ol class="breadcrumb justify-content-sm-end align-items-center">
-                    <li class="breadcrumb-item"> <a href="index.html">
+                    <li class="breadcrumb-item"> <a href="#!">
                             <i class="fa-solid fa-house"></i>
                     <li class="breadcrumb-item">Pages</li>
                     <li class="breadcrumb-item active">Sample Page</li>
+                    </a>
                 </ol>
             </nav>
         </div>
