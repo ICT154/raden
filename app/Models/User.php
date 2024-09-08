@@ -27,6 +27,7 @@ class User extends Authenticatable implements AuditableContract
         'email',
         'password',
         'google_id',
+        'cookie'
     ];
 
     /**
@@ -49,9 +50,19 @@ class User extends Authenticatable implements AuditableContract
         'password' => 'hashed',
     ];
 
-    // sendEmailVerificationNotification
+    /**
+     * Find user by remember token
+     *
+     * @param string $token
+     * @return User|null
+     */
     public function sendEmailVerificationNotification()
     {
         $this->notify(new VerifyEmail);
+    }
+
+    public static function findByCookie($token)
+    {
+        return self::where('cookie', $token)->first();
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\Profile\UserController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\System\MenuController;
 use App\Http\Controllers\Auth\GoogleAuthController;
+use App\Http\Controllers\Lite\Dashboard\DashboardLiteController;
 
 
 
@@ -51,6 +52,12 @@ Route::middleware(['auth'])->group(function () {
     // verification.notice
     Route::get('/email/verify', [AuthenticationController::class, 'verificationNotice'])->name('verification.notice');
 
+    Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
+
+    // LITE MODE.
+    Route::get('/lite/dashboard', [DashboardLiteController::class, 'index'])->name('lite.dashboard.index');
+
+    // FULL MODE
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');

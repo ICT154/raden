@@ -16,6 +16,21 @@ class AuthenticationController extends Controller
 {
     public function index()
     {
+        // check if remember me cookie is set
+        if (request()->cookie('remember_me_lapak_gozal')) {
+            $cookie = explode('|', request()->cookie('remember_me_lapak_gozal'));
+            $user = User::findByCookie($cookie[1]);
+
+            if ($user && $cookie[1] == $user->remember_token) {
+                auth()->login($user);
+                return redirect()->route('dashboard.index');
+            }
+        } else if (auth()->check()) {
+            return redirect()->route('dashboard.index');
+        } else {
+            return view('auth.login');
+        }
+
         return view('auth.login');
     }
 
@@ -59,6 +74,12 @@ class AuthenticationController extends Controller
         $email = $request->input('login.email');
         $password = $request->input('login.password');
 
+
+        echo "<pre>";
+        print_r($remember);
+        echo "</pre>";
+
+
         if (auth()->attempt([
             'email' => $email,
             'password' => $password
@@ -66,6 +87,20 @@ class AuthenticationController extends Controller
 
             // jika email sudah terverifikasi
             if (auth()->user()->email_verified_at != null) {
+
+                // jika remember me dicentang
+                if ($remember) {
+                    $cookie = cookie('remember_me_lapak_gozal', auth()->user()->id . '|' . auth()->user()->remember_token, 60 * 24 * 30);
+                    // save cookie to database
+
+                    auth()->user()->cookie = auth()->user()->remember_token;
+                    auth()->user()->save();
+
+                    return redirect()->intended('/dashboard')->withCookie($cookie);
+                } else {
+                    return redirect()->intended('/dashboard');
+                }
+
                 $request->session()->regenerate();
                 return redirect()->intended('/dashboard');
             } else {
@@ -82,13 +117,10 @@ class AuthenticationController extends Controller
         ]);
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
         auth()->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/');
+        return redirect()->route('login');
     }
 
     public function verificationNotice()
@@ -164,6 +196,12 @@ class AuthenticationController extends Controller
         return redirect()->route('dashboard.index');
     }
 
+    /**
+     * Sends a reset link email to the specified email address.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function sendResetLinkEmail(Request $request)
     {
         $request->validate([
@@ -179,12 +217,24 @@ class AuthenticationController extends Controller
             : back()->withErrors(['email' => __($status)]);
     }
 
+    /**
+     * Show the password reset form.
+     *
+     * @param string $token The reset token.
+     * @return \Illuminate\Contracts\View\View The password reset form view.
+     */
     public function showResetForm($token)
     {
         $email = request()->query('email');
         return view('auth.password-reset', ['token' => $token, 'email' => $email]);
     }
 
+    /**
+     * Reset the user's password.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
     public function resetPassword(Request $request)
     {
         $request->validate([
