@@ -74,12 +74,6 @@ class AuthenticationController extends Controller
         $email = $request->input('login.email');
         $password = $request->input('login.password');
 
-
-        echo "<pre>";
-        print_r($remember);
-        echo "</pre>";
-
-
         if (auth()->attempt([
             'email' => $email,
             'password' => $password
@@ -204,6 +198,7 @@ class AuthenticationController extends Controller
      */
     public function sendResetLinkEmail(Request $request)
     {
+        dd($request->all());
         $request->validate([
             'forgot.email' => 'required|email',
         ]);

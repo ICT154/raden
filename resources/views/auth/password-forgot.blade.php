@@ -11,7 +11,9 @@
     <!-- Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/vendors/fontawesome/css/all.min.css') }}">
     <!-- App css-->
     <link rel="stylesheet" href="{{ asset('/css/style.min.css') }}">
@@ -20,6 +22,7 @@
         Vendor CSS End
     ***********************************-->
 
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfzto4qAAAAAChAp6zqVq-ez7ZxWDWIzY-hIOiM"></script>
 </head>
 
 <body>
@@ -41,15 +44,15 @@
                             </div>
                             <div class="login-main">
                                 @if ($errors->any())
-                                <div class="alert alert-light-danger" role="alert">
-                                    @foreach ($errors->all() as $error)
-                                    {{ $error }}
-                                    @endforeach
-                                </div>
+                                    <div class="alert alert-light-danger" role="alert">
+                                        @foreach ($errors->all() as $error)
+                                            {{ $error }}
+                                        @endforeach
+                                    </div>
                                 @elseif (session('status'))
-                                <div class="alert alert-light-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
+                                    <div class="alert alert-light-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
                                 @endif
                                 <form class="theme-form" action="/password/forgot" method="post">
                                     @csrf
@@ -58,21 +61,23 @@
                                         <label class="col-form-label" for="forgot_email">Enter Your Email</label>
                                         <div class="row">
                                             <div class="col-12 col-sm-12">
-                                                <input class="form-control mb-1" type="email" placeholder="Enter email" id="forgot_email" name="forgot[email]">
+                                                <input class="form-control mb-1" type="email"
+                                                    placeholder="Enter email" id="forgot_email" name="forgot[email]"
+                                                    autocomplete="off">
                                             </div>
                                             <div class="col-12">
                                                 <div class="text-end">
-                                                    <button class="btn btn-primary btn-block m-t-10" type="submit">Send</button>
+                                                    <button class="btn btn-primary btn-block m-t-10" type="submit"
+                                                        class="g-recaptcha"
+                                                        data-sitekey="6Lfzto4qAAAAAChAp6zqVq-ez7ZxWDWIzY-hIOiM"
+                                                        data-callback='onSubmit' data-action='submit'>Send</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mt-4 mb-4"><span class="reset-password-link">If don't receive Reset Link ? <a class="btn-link text-danger" href="javascript:void(0);">Resend</a></span>
-                                        <h6 class="mt-4 f-w-700">Create Your Password</h6>
-                                        <div class="form-group mb-0 checkbox-checked">
-                                            <button class="btn btn-primary btn-block w-100 mt-3" type="submit">Done
-                                            </button>
-                                        </div>
+                                    <div class="mt-4 mb-4"><span class="reset-password-link">If don't receive Reset Link
+                                            ? <a class="btn-link text-danger"
+                                                href="javascript:void(0);">Resend</a></span>
                                 </form>
                             </div>
                         </div>
@@ -93,7 +98,11 @@
     $('.reset-password-link a').on('click', function() {
         // trigger the button
         $(this).closest('.login-card').find('button[type="submit"]').trigger('click');
-        $(this).text('Link Sent');
+    });
+
+    $('form').on('submit', function() {
+        $(this).find('button[type="submit"]').text('Processing...');
+        $(this).find('button[type="submit"]').attr('disabled', true);
     });
 </script>
 <script>
